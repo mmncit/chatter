@@ -1,0 +1,22 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "sample chat app using socket io",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "snowpack dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "author": "Mamun",
+  "license": "ISC",
+  "devDependencies": {
+    "snowpack": "^3.8.8"
+  },
+  "dependencies": {
+    "socket.io": "^4.7.2"
+  }
+}
