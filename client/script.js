@@ -11,6 +11,11 @@ socket.on("connect", () => {
   displayMessage(`You are connected with id: ${socket.id}`);
 });
 
+socket.on("receive-message", (message) => {
+  // receive message
+  displayMessage(message);
+});
+
 function displayMessage(message) {
   const div = document.createElement("div");
   div.textContent = message;
