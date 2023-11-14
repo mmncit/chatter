@@ -1,7 +1,15 @@
+import { io } from "socket.io-client";
+
 const joinRoomButton = document.getElementById("room-button");
 const messageInput = document.getElementById("message-input");
 const roomInput = document.getElementById("room-input");
 const form = document.getElementById("form");
+
+const socket = io("http://localhost:3000"); // connect to socket server
+
+socket.on("connect", () => {
+  displayMessage(`You are connected with id: ${socket.id}`);
+});
 
 function displayMessage(message) {
   const div = document.createElement("div");
@@ -17,7 +25,7 @@ form.addEventListener("submit", (e) => {
     return;
   }
   displayMessage(message);
-  console.log(`joined room: ${room}`);
+  socket.emit("send-message", message);
   messageInput.value = "";
 });
 
